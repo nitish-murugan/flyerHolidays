@@ -3,7 +3,7 @@ import { FiPlus, FiTrash2, FiEdit2 } from 'react-icons/fi';
 import api from '../../api/axios';
 import './AdminLayout.css';
 
-const IMG_BASE = 'http://localhost:5000';
+const IMG_BASE = 'https://flyer-holidays-backend.vercel.app';
 
 export default function AdminGallery() {
   const [photos, setPhotos] = useState([]);

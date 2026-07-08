@@ -3,7 +3,7 @@ import { FiClock, FiStar, FiArrowRight } from 'react-icons/fi';
 import { MdLocationOn } from 'react-icons/md';
 import './PackageCard.css';
 
-const IMG_BASE = 'http://localhost:5000';
+const IMG_BASE = 'https://flyer-holidays-backend.vercel.app';
 
 export default function PackageCard({ pkg }) {
   const img = pkg.images?.[0]

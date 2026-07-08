@@ -3,7 +3,7 @@ import { FiStar } from 'react-icons/fi';
 import api from '../api/axios';
 import './ReviewsPage.css';
 
-const IMG_BASE = 'http://localhost:5000';
+const IMG_BASE = 'https://flyer-holidays-backend.vercel.app';
 
 const DEFAULT_REVIEWS = [
   { _id: 1, name: 'Priya Sharma', location: 'Chennai', rating: 5, review: 'An absolutely wonderful experience! The team at Flyer Holidays took care of every detail. Our Manali trip was beyond expectations.', package: 'Manali Adventure' },

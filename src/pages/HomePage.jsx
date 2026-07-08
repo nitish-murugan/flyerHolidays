@@ -7,7 +7,7 @@ import PackageCard from '../components/PackageCard';
 import api from '../api/axios';
 import './HomePage.css';
 
-const IMG_BASE = 'http://localhost:5000';
+const IMG_BASE = 'https://flyer-holidays-backend.vercel.app';
 
 const HERO_FALLBACKS = [
   'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=80',

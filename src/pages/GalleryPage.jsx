@@ -3,7 +3,7 @@ import { FaHeart } from 'react-icons/fa';
 import api from '../api/axios';
 import './GalleryPage.css';
 
-const IMG_BASE = 'http://localhost:5000';
+const IMG_BASE = 'https://flyer-holidays-backend.vercel.app';
 const FALLBACKS = [
   'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80',
   'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80',

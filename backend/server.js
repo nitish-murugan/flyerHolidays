@@ -8,7 +8,11 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://flyer-holidays.vercel.app',
+    'https://flyer-holidays-backend.vercel.app'
+  ],
   credentials: true
 }));
 app.use(express.json());
@@ -45,14 +49,16 @@ app.get('/api/health', (req, res) => {
   res.json({ message: 'Flyer Holidays API is running!' });
 });
 
-// Connect to MongoDB and start server
+// Connect to MongoDB
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/flyerholidays';
 
-mongoose
-  .connect(MONGODB_URI)
-  .then(async () => {
+const connectDB = async () => {
+  try {
+    if (mongoose.connection.readyState >= 1) return;
+    await mongoose.connect(MONGODB_URI);
     console.log('✅ Connected to MongoDB');
+    
     // Seed admin on first run
     const Admin = require('./models/Admin');
     const bcrypt = require('bcryptjs');
@@ -62,11 +68,22 @@ mongoose
       await Admin.create({ username: process.env.ADMIN_USERNAME || 'admin', password: hashed });
       console.log('✅ Admin user created');
     }
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
-    });
-  })
-  .catch((err) => {
+  } catch (err) {
     console.error('❌ MongoDB connection error:', err);
-    process.exit(1);
+    // Don't exit process in serverless environments
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
+  }
+};
+
+// Initialize connection
+connectDB();
+
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
   });
+}
+
+module.exports = app;

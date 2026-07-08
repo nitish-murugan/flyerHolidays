@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import api from '../../api/axios';
 import './AdminLayout.css';
 
-const IMG_BASE = 'http://localhost:5000';
+const IMG_BASE = 'https://flyer-holidays-backend.vercel.app';
 
 export default function AdminSettings() {
   const [form, setForm] = useState({ siteName: 'Flyer Holidays', tagline: '', phone: '', email: '', address: '', whatsapp: '', facebook: '', instagram: '', youtube: '', formsphereId: '', aboutTitle: '', aboutDescription: '' });

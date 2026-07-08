@@ -5,7 +5,7 @@ import { MdLocationOn } from 'react-icons/md';
 import api from '../api/axios';
 import './PackageDetailPage.css';
 
-const IMG_BASE = 'http://localhost:5000';
+const IMG_BASE = 'https://flyer-holidays-backend.vercel.app';
 
 export default function PackageDetailPage() {
   const { id } = useParams();

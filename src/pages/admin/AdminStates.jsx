@@ -4,7 +4,7 @@ import api from '../../api/axios';
 import './AdminLayout.css';
 import './AdminDashboard.css';
 
-const IMG_BASE = 'http://localhost:5000';
+const IMG_BASE = 'https://flyer-holidays-backend.vercel.app';
 
 export default function AdminStates() {
   const [states, setStates] = useState([]);
