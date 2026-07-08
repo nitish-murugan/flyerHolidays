@@ -1,0 +1,52 @@
+.admin-login {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-dark);
+  background-image: radial-gradient(ellipse at 20% 50%, rgba(255,107,53,0.1) 0%, transparent 60%),
+                    radial-gradient(ellipse at 80% 20%, rgba(0,180,216,0.08) 0%, transparent 60%);
+  padding: 24px;
+}
+.admin-login-card {
+  width: 100%; max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 48px 40px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  animation: fadeInUp 0.5s ease;
+}
+.admin-login-logo {
+  display: flex; align-items: center; gap: 10px;
+  color: #fff; font-size: 24px; font-weight: 800;
+  margin-bottom: 32px;
+}
+.admin-login-logo svg { font-size: 32px; color: var(--primary); transform: rotate(-45deg); }
+.admin-login-logo span span { color: var(--primary); }
+.admin-login-card h2 { color: #fff; font-size: 26px; margin-bottom: 8px; }
+.admin-login-card > p { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; }
+.admin-error {
+  background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3);
+  color: #f87171; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 20px;
+}
+.admin-input-group {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 12px; padding: 14px 16px; margin-bottom: 14px;
+  transition: border-color 0.3s;
+}
+.admin-input-group:focus-within { border-color: var(--primary); }
+.admin-input-group svg { color: var(--text-muted); font-size: 18px; flex-shrink: 0; }
+.admin-input-group input {
+  background: none; border: none; outline: none; color: #fff;
+  font-size: 15px; font-family: var(--font-body); width: 100%;
+}
+.admin-input-group input::placeholder { color: var(--text-muted); }
+.admin-login-btn {
+  width: 100%; background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff; border: none; border-radius: 12px; padding: 15px;
+  font-size: 16px; font-weight: 700; font-family: var(--font-body);
+  cursor: pointer; margin-top: 8px; transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(255,107,53,0.4);
+}
+.admin-login-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(255,107,53,0.5); }
+.admin-login-btn:disabled { opacity: 0.6; cursor: not-allowed; }
